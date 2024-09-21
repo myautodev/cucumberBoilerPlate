@@ -1,0 +1,40 @@
+Selenium Scenario 5– Practical Test:
+
+Note: You have 45 minutes to complete this scenario.
+
+In the test we require you to demonstrate the following automation practices:
+Usage of Feature Files
+Java Classes
+Automation Best practices
+Test Execution & Reporting
+
+Automation Tool Recommendation:
+Selenium
+Rest Assured
+Cucumber
+
+Navigate to this website:
+www.eqaroloflow.co.za/wp/
+
+If you have any issues opening the website when executing, please use the following URL
+http://eqaroloflow.co.za/wp/
+
+Login using the My Account menu item with the following credentials:
+User: TestUser
+Password: Tester5027#
+Go to Shop on the Menu bar
+Order Bottle of Kanonkop Pinotage 2019 wine
+Select Place your order
+Print the order number
+
+Automation Test Site – EQA RoloFlow TestSite
+A post from Automation Test Site on Automation Test Site provided by: http://eqaroloflow.co.za/wp
+
+
+Endpoint: https://api.coindesk.com/v1/bpi/currentprice.json
+
+Return the price of GBP Rate
+
+This is just an Example:
+
+
