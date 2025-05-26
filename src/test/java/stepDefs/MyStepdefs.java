@@ -17,42 +17,51 @@ public class MyStepdefs extends TestBase {
 
 
 
-    @Given("I am logged into the app with {string} and  {string}")
+    @Given("I am on the home page")
     public void iAmLoggedIntoTheApp(String username,String password) {
-        startDriver();
-        driver.get("https://www.nationallottery.co.za/");
-        loginPage = new LoginPage(driver);
-        Assert.assertTrue("User could not click on the myaccount button",loginPage.clickOnMyAccountButton());
-        Assert.assertTrue("User Could not enter the username",loginPage.enterUsername(username));
-        Assert.assertTrue("User Could not enter the password",loginPage.enterPassword(password));
-        Assert.assertTrue("User could not click on Login",loginPage.clickOnLogin());
+        initializeDriver();
+    }
 
-
-
-
-
+    @When("I navigate to the element page")
+    public void iNavigateToTheElementPage() {
+        Assert.assertTrue("could not click on homePage.clickOnElementButton() ",homePage.clickOnElementButton());
 
     }
 
-    @When("I navigate to the shop")
-    public void iNavigateToTheShop() {
-
-        homePage = new HomePage(driver);
-        Assert.assertTrue("User could not click on homePage", homePage.clickOnShopButton());
-
-    }
-
-    @When("I select the product and add to cart")
-    public void iSelectTheProductAndAddToCart() {
-    }
-
-    @When("I click on checkout")
-    public void iClickOnCheckout() {
-    }
-
-    @Then("I print the order Number")
-    public void iPrintTheOrderNumber() {
-    }
 
 
+//    @When("I navigate to the shop")
+//    public void iNavigateToTheShop() {
+//
+//        homePage = new HomePage(driver);
+//        Assert.assertTrue("User could not click on homePage", homePage.clickOnShopButton());
+//
+//    }
+
+//    @When("I select the product and add to cart")
+//    public void iSelectTheProductAndAddToCart() {
+//    }
+//
+//    @When("I click on checkout")
+//    public void iClickOnCheckout() {
+//    }
+//
+//    @Then("I print the order Number")
+//    public void iPrintTheOrderNumber() {
+//    }
+//
+//
+//    @Given("I am logged into the app with {string} and  {string} {string} and  {string}")
+//    public void iAmLoggedIntoTheAppWithStringAndStringAnd(String arg0, String arg1) {
+//
+//    }
+//
+//    @Given("I am logged into the application")
+//    public void iAmLoggedIntoTheApplication() {
+//        System.out.println("dfsdfsdf");
+//    }
+//
+//    @When("I navigate to the element page")
+//    public void iNavigateToTheElementPage() {
+//    }
 }
