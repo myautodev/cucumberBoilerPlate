@@ -9,6 +9,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 public class CommonFunctions {
 
@@ -18,6 +19,8 @@ public class CommonFunctions {
     WebDriverWait wait;
 
     Actions actions;
+
+    String originalWindow;
 
     public CommonFunctions(WebDriver driver) {
         this.driver = driver;
@@ -29,6 +32,19 @@ public class CommonFunctions {
         return wait.until(d -> element.isDisplayed());
 
     }
+
+    public boolean waitForElementToBeEnabbled(WebElement element, int time) {
+        wait = new WebDriverWait(this.driver, Duration.ofSeconds(time));
+        return wait.until(d -> element.isEnabled());
+
+    }
+
+    public boolean waitForElementToBeVisible(WebElement element, int time) {
+        wait = new WebDriverWait(this.driver, Duration.ofSeconds(time));
+        return wait.until(d -> element.isDisplayed());
+
+    }
+
 
     public boolean scrollByActionsAmount(int x, int y) {
         try {
@@ -123,6 +139,28 @@ public class CommonFunctions {
         }
         return flag;
     }
+
+    public void switchToNewWindowHandle() {
+        this.originalWindow = driver.getWindowHandle();
+        Set<String> windowHandles = driver.getWindowHandles();
+
+        // Switch to the new tab
+        for (String handle : windowHandles) {
+            if (!handle.equals(originalWindow)) {
+                driver.switchTo().window(handle);
+                break;
+            }
+        }
+
+
+    }
+
+    public void switchBackToOriginalWindow() {
+        if (originalWindow != null) {
+            driver.switchTo().window(originalWindow);
+        }
+    }
+
 
 }
 

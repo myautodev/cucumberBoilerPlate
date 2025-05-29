@@ -16,6 +16,10 @@ public class HomePage {
     WebElement elementButton;
 
 
+    @FindBy(xpath = "//div[normalize-space()='Alerts, Frame & Windows']")
+    WebElement alertFramesButton;
+
+
     public HomePage(WebDriver driver) {
         PageFactory.initElements(driver, this);
         this.driver = driver;
@@ -28,6 +32,17 @@ public class HomePage {
         commonFunctions.scrollByJavaScriptExecutor(36, 518);
         if (commonFunctions.waitForElementToBeClickable(this.elementButton, 20)) {
             elementButton.click();
+            return true;
+        }
+        return false;
+
+
+    }
+
+    public boolean clickOnAlertButton() {
+        commonFunctions.scrollByJavaScriptExecutor(36, 518);
+        if (commonFunctions.waitForElementToBeClickable(this.alertFramesButton, 20)) {
+            alertFramesButton.click();
             return true;
         }
         return false;

@@ -15,10 +15,11 @@ public class ElementPage {
     WebDriver driver;
     CommonFunctions commonFunctions;
 
-    @FindBy(xpath = "//div[@class='card-body']/h5[normalize-space(text())='Elements']")
+    @FindBy(xpath = " //div[normalize-space()='Elements']")
     WebElement elementButton;
     @FindBy(xpath = "//span[text()='Text Box']")
     WebElement textBox;
+
 
     String listForElementXpath = "//div[@class='header-right']/div[@class='icon']";
 

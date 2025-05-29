@@ -18,12 +18,13 @@ public class MyStepdefs extends TestBase {
 
 
     @Given("I am on the home page")
-    public void iAmLoggedIntoTheApp(String username,String password) {
+    public void iAmLoggedIntoTheApp() {
         initializeDriver();
     }
 
     @When("I navigate to the element page")
     public void iNavigateToTheElementPage() {
+        homePage = new HomePage(driver);
         Assert.assertTrue("could not click on homePage.clickOnElementButton() ",homePage.clickOnElementButton());
 
     }

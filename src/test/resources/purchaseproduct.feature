@@ -1,5 +1,5 @@
 Feature: User navigates to the Element page
-  Scenario Outline: this is the test
+  Scenario: this is the test
     Given I am on the home page
     When  I navigate to the element page
 #    When I select the product and add to cart
@@ -9,6 +9,4 @@ Feature: User navigates to the Element page
 
 
 #
-    Examples:
 
-      | username | password    |  |
